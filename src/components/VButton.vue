@@ -1,11 +1,12 @@
 <template>
-  <button
+  <a
     class="custom-btn"
-    @click="$emit('on-btn-click')">
+    target="_blank"
+    href="https://apps.apple.com/us/app/dr-kegel-for-mens-health/id1470065487">
     <span>
       {{ text }}
     </span>
-  </button>
+  </a>
 </template>
 
 <script>
@@ -17,6 +18,7 @@
 
 <style lang="scss">
   .custom-btn {
+    text-decoration: none;
     width: 247px;
     height: 45px;
     border-radius: 75px;
@@ -28,5 +30,9 @@
     justify-content: center;
     color: #ffffff;
     font-size: 16px;
+  }
+  a.custom-btn:link, a.custom-btn:active, a.custom-btn:visited{
+    color: #fff;
+    text-decoration: none;
   }
 </style>

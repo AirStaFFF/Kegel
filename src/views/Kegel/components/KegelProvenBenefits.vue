@@ -1,5 +1,5 @@
 <template>
-  <div class="prover-benefits">
+  <div class="prover-benefits" id="Benefits">
     <v-border-title
       :font-size="48"
       :text="'Scientifically Proven Benefits'"/>
@@ -97,19 +97,47 @@
   }
   @media screen and (max-width: 1024px){
     .prover-benefits {
+      padding-right: 64px;
+      padding-left: 64px;
       margin-top: 79px;
       .prover-benefits_content {
-        justify-content: center;
+        justify-content: space-between;
         .prover-benefits_item {
-          max-width: 279px;
+          max-width: 260px;
           width: 33%;
           .item-text {
             font-size: 16px;
             max-width: unset;
-            position: relative;
+            position: unset;
             left: unset;
-            margin-left: unset;
-            margin-top: -50px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -40px;
+            max-width: 160px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 850px){
+    .prover-benefits {
+      padding-right: 64px;
+      padding-left: 64px;
+      margin-top: 79px;
+      .prover-benefits_content {
+        justify-content: space-between;
+        .prover-benefits_item {
+          max-width: 185px;
+          width: 33%;
+          .item-text {
+            font-size: 16px;
+            max-width: unset;
+            position: unset;
+            left: unset;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -40px;
+            max-width: 160px;
           }
         }
       }
@@ -127,7 +155,7 @@
       }
     }
   }
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 767px){
     .prover-benefits {
       margin-top: 60px;
       .prover-benefits_content {

@@ -281,17 +281,21 @@ export default {
       title: 'Navigation',
       links: [
         {
-          text: 'Overview',
-          link: ''
+          link: '#Overview',
+          text: 'Overview'
         },
         {
-          text: 'Features',
-          link: ''
+          link: '#Benefits',
+          text: 'Benefits'
         },
         {
-          text: 'FAQ',
-          link: ''
+          link: '#Features',
+          text: 'Features'
         },
+        {
+          link: '#FAQ',
+          text: 'FAQ'
+        }
       ]
     },
     {

@@ -12,8 +12,8 @@
           <div class="slide-link-block">
             <img :src="slide.info.img" alt="" class="link-block_img">
             <div class="link-block_link">
-              <span class="text">{{ slide.info.title }}</span>
-              <span class="link">{{ slide.info.discription }}</span>
+              <span class="ellipse"><span class="text">{{ slide.info.title }}</span></span>
+              <span class="ellipse"><span class="link">{{ slide.info.discription }}</span></span>
             </div>
           </div>
         </slide>
@@ -69,12 +69,13 @@
       }
       .hooper {
         max-width: 807px;
-        min-height: 315px;
         border-radius: 21px;
+        min-height: 315px;
         box-shadow: 0 50px 150px 0 rgba(96, 106, 140, 0.11);
         background-color: #ffffff;
         margin-left: auto;
         margin-right: auto;
+        overflow: visible;
         .hooper-slide {
           padding: 48px 100px 45px;
           max-width: 807px;
@@ -90,6 +91,7 @@
            .slide-link-block {
              display: flex;
              height: 64px;
+             overflow: hidden;
              .link-block_img {
                width: 64px;
                height: 64px;
@@ -100,7 +102,16 @@
                border-left: 1px solid #fa2724;
                display: flex;
                flex-wrap: wrap;
-               align-items: center;
+               overflow-y: hidden;
+               .ellipse {
+                 width: 100%;
+                 overflow: hidden;
+                 display: inline-block;
+                 text-decoration: none;
+                 text-overflow: ellipsis;
+                 white-space: nowrap;
+                 line-height: 2;
+               }
                .text {
                  width: 100%;
                  font-weight: bold;
@@ -167,8 +178,8 @@
   @media screen and (max-width: 1440px){
     .slider_block {
       margin-top: 133px;
-      padding-left: 156px;
-      padding-right: 156px;
+      padding-left: 128px;
+      padding-right: 128px;
     }
   }
   @media screen and (max-width: 1250px){
@@ -179,11 +190,27 @@
   @media screen and (max-width: 1024px){
     .slider_block {
       margin-top: 69px;
+      padding-left: 64px;
+      padding-right: 64px;
+      .custom-carousel {
+        .hooper {
+          .hooper-slide {
+            padding: 48px 62px 45px;
+          }
+          .hooper-prev {
+            display: none !important;
+          }
+          .hooper-next {
+            display: none !important;
+          }
+        }
+      }
     }
   }
   @media screen and (max-width: 768px){
     .slider_block {
-
+      padding-left:48px;
+      padding-right: 48px;
     }
   }
   @media screen and (max-width: 568px){
@@ -195,6 +222,14 @@
         .hooper {
           .hooper-slide {
             padding: 24px;
+            .slide-link-block {
+              height: 60px;
+              margin-top: 32px;
+              .link-block_img {
+                height: 60px;
+                width: 60px;
+              }
+            }
           }
           .hooper-prev {
             display: none !important;
@@ -209,6 +244,62 @@
               width: 8px;
             }
           }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 498px){
+    .slider_block {
+      .custom-carousel {
+        .hooper {
+          min-height: 340px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 440px){
+    .slider_block {
+      .custom-carousel {
+        .hooper {
+          min-height: 400px;
+          .hooper-slide {
+            padding: 24px;
+            .slide-link-block {
+              height: 42px;
+              margin-top: 32px;
+              .link-block_img {
+                height: 42px;
+                width: 42px;
+              }
+            }
+            .ellipse {
+              line-height: 1.2 !important;
+            }
+            .text {
+              font-size: 12px !important;
+            }
+            .link {
+              font-size: 12px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 395px){
+    .slider_block {
+      .custom-carousel {
+        .hooper {
+          min-height: 440px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 350px){
+    .slider_block {
+      .custom-carousel {
+        .hooper {
+          min-height: 470px;
         }
       }
     }

@@ -24,8 +24,8 @@
               v-for="(link, id2) in navigation.links"
               :key="id2">
               <a
-                class="link-block-link"
-                :href="link.link">{{link.text}}</a>
+                v-scroll-to="link.link"
+                class="link-block-link">{{link.text}}</a>
             </div>
           </div>
         </div>

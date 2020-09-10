@@ -1,5 +1,5 @@
 <template>
-  <div class="kegel-programm">
+  <div class="kegel-programm" id="Features">
     <v-border-title
       :font-size="48"
       :text-center="true"

@@ -1,5 +1,5 @@
 <template>
-  <div class="what-is_block d-flex align-items-center">
+  <div class="what-is_block d-flex align-items-center" id="Overview">
     <div class="what-is_block_img">
       <img src="@/assets/images/2.png" alt="" class="w-100">
     </div>
@@ -99,7 +99,17 @@
         width: 100%;
         padding-left: 0px;
         .red-border_block {
+          justify-content: center;
           margin-top: 32px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 568px){
+    .what-is_block {
+      .what-is_block_info {
+        .red-border_block {
+          justify-content: start;
         }
       }
     }

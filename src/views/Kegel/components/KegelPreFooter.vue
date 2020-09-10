@@ -10,10 +10,10 @@
       ></v-button>
     </div>
     <div class="pre-footer-right_block">
-      <img
-        class="pre-footer-image"
-        :style="{width: pngWidth}"
-        src="@/assets/images/16.png">
+      <picture>
+        <source  :style="{width: pngWidth}" media="(min-width: 768px)" class="pre-footer-image" srcset="@/assets/images/16.png">
+        <img  :style="{width: pngWidth}" src="@/assets/images/mobile-footer-1.png" class="pre-footer-image" alt="">
+      </picture>
     </div>
   </div>
 </template>
@@ -134,7 +134,7 @@
           position: relative;
           top: -70px;
           width: 100% !important;
-          max-width: 331px;
+          max-width: 375px;
         }
       }
     }
@@ -145,13 +145,16 @@
       padding-right: 48px;
       .pre-footer-left_block {
       }
-      .pre-footer-right_block {
-        .pre-footer-image {
-          position: relative;
-          top: -70px;
-          width: 100% !important;
-          max-width: 331px;
-        }
+    }
+  }
+  @media screen and (max-width: 767px){
+    .kegel-pre-footer {
+      padding-left: 0px;
+      padding-right: 0px;
+      .pre-footer-left_block {
+
+        padding-left: 48px;
+        padding-right: 48px;
       }
     }
   }
@@ -161,6 +164,7 @@
       margin-top: 280px;
       padding-bottom: 71px;
       .pre-footer-left_block {
+        max-width: unset;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -188,13 +192,8 @@
   }
   @media screen and (max-width: 400px){
     .kegel-pre-footer {
-      padding-left: 48px;
-      padding-right: 48px;
       margin-top: 220px;
       .pre-footer-right_block {
-        .pre-footer-image {
-          right:  -5%;
-        }
       }
     }
   }

@@ -18,9 +18,10 @@
       </div>
     </div>
     <div class="header-right_block">
-      <img
-        :style="{width: pngWidth}"
-        src="@/assets/images/1.png" alt="" class="header-right_block-img">
+      <picture>
+        <source  :style="{width: pngWidth}" media="(min-width: 768px)" class="header-right_block-img" srcset="@/assets/images/1.png">
+        <img  :style="{width: pngWidth}" src="@/assets/images/mobile-header-1.png" class="header-right_block-img" alt="">
+      </picture>
     </div>
   </div>
 </template>
@@ -50,14 +51,18 @@
     },
     methods: {
       handlerScrollY() {
-        this.pngWidth = document.documentElement.clientWidth / 2.6 + 'px';
+        if(document.documentElement.clientWidth >=850) {
+          this.pngWidth = document.documentElement.clientWidth / 2.6 + 'px';
+        } else {
+          this.pngWidth = document.documentElement.clientWidth / 2.3 + 'px';
+        }
         if(document.documentElement.clientWidth >= 1650) {
           this.bgImage = 'url(' + require('@/assets/images/header-xxl.png') + ')'
         } else if (document.documentElement.clientWidth >= 1440) {
           this.bgImage = 'url(' + require('@/assets/images/header-xl.png') + ')'
-        } else if (document.documentElement.clientWidth >= 1024) {
+        } else if (document.documentElement.clientWidth >= 850) {
           this.bgImage = 'url(' + require('@/assets/images/header-lg.png') + ')'
-        } else if (document.documentElement.clientWidth >= 768) {
+        } else if (document.documentElement.clientWidth >= 568) {
           this.bgImage = 'url(' + require('@/assets/images/header-md.png') + ')'
         } else {
           this.bgImage = 'url(' + require('@/assets/images/header-sm.png') + ')'
@@ -112,13 +117,14 @@
       padding-right: 165px;
     }
   }
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: 1250px){
     .kegel-header {
-      padding-right: 64px;
+      padding-right: 32px;
       padding-left: 64px;
       background-position-y:0px;
       .header-left_block {
         width: 45%;
+        margin-top: 100px;
         .custom-title {
           font-size: 32px !important;
           max-width: 300px;
@@ -130,7 +136,7 @@
       .header-right_block {
         width: 55%;
         right: 0 !important;
-        top: -50px;
+        top: 10px;
         .header-right_block-img {
           /*max-width: 415px;*/
           /*width: 100% !important;*/
@@ -138,7 +144,18 @@
       }
     }
   }
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 1024px){
+    .kegel-header {
+      .header-left_block {
+        .custom-discription {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 600px){
+    .kegel-header .header-right_block-img {
+    }
     .kegel-header {
       padding-left: 58px;
       padding-right: 58px;
@@ -147,6 +164,7 @@
       flex-wrap: wrap-reverse;
       background-position-y: 0px;
       .header-left_block {
+        margin-top: 0;
         width: 100%;
         justify-content: center;
         div {
@@ -159,7 +177,9 @@
           .custom-title {
             font-size: 32px !important;
             text-align: center;
-            margin-top: 45px !important;
+            margin-left: auto;
+            margin-right: auto;
+            /*margin-top: 45px !important;*/
           }
           .custom-discription {
             font-size: 18px !important;
@@ -175,9 +195,23 @@
       }
     }
   }
+  @media screen and (max-width: 767px){
+    .kegel-header {
+      padding: 99px 0 90px;
+      .header-left_block {
+        padding-left: 48px;
+        padding-right: 48px;
+      }
+      .header-right_block {
+        max-width: 375px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
   @media screen and (max-width: 568px){
     .kegel-header {
-      padding: 99px 48px 90px;
+      padding: 99px 0px 90px;
       .header-right_block {
         right: 0 !important;
         .header-right_block-img {
