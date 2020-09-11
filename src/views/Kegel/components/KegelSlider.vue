@@ -13,7 +13,12 @@
             <img :src="slide.info.img" alt="" class="link-block_img">
             <div class="link-block_link">
               <span class="ellipse"><span class="text">{{ slide.info.title }}</span></span>
-              <span class="ellipse"><span class="link">{{ slide.info.discription }}</span></span>
+              <a
+                :href="slide.info.discription"
+                target="_blank"
+                class="ellipse">
+                <span class="link">{{ slide.info.discription }}</span>
+              </a>
             </div>
           </div>
         </slide>

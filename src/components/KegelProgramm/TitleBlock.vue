@@ -30,11 +30,14 @@
     margin-right: auto;
     .custom-title {
       text-align: center;
+      line-height: 1.81;
     }
     .custom-btn {
       margin-top: 24px;
       margin-left: auto;
       margin-right: auto;
+      position: relative;
+      z-index: 111;
     }
     .max-width-800 {
       max-width: 800px;
@@ -63,7 +66,6 @@
       padding-right: 48px;
       .custom-title {
         font-size: 24px !important;
-        line-height: 1.81;
         color: #333e51;
       }
       .max-width-800 {

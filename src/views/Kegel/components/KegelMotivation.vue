@@ -47,6 +47,7 @@
       .not-all_item {
         margin-right: 100px;
         margin-top: 69px;
+        min-width: 210px;
         &:nth-child(3) {
           margin-right: 0;
         }
@@ -66,7 +67,7 @@
           font-size: 16px;
           line-height: 1.81;
           color: #5a6175;
-          max-width: 240px;
+          max-width: 210px;
           margin-left: auto;
           margin-right: auto;
           text-align: center;
@@ -89,7 +90,7 @@
           /*  margin-right: 93px !important;*/
           /*}*/
           .item-text {
-            max-width: 231px;
+            max-width: 210px;
           }
         }
       }
@@ -125,8 +126,8 @@
             margin-right: 0px !important;
           }
           .item-text {
-            min-width: 230px;
-            max-width: 230px;
+            min-width: 210px;
+            max-width: 210px;
           }
         }
       }

@@ -48,6 +48,7 @@
         max-width: 342px;
         margin-right: 79px;
         .item-img {
+          display: block;
           img {
             max-width: 342px;
             width: 100%;
@@ -170,8 +171,11 @@
             margin-right: 0;
           }
           .item-img {
-            display: flex;
-            justify-content: center;
+            img {
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+            }
           }
         }
       }
@@ -192,7 +196,7 @@
           margin-right: 0 !important;
           margin-top: 55px;
           .item-text {
-            font-size: 14px;
+            font-size: 16px;
             max-width: unset;
             position: relative;
             left: unset;
