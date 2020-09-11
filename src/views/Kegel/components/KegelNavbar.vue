@@ -93,6 +93,7 @@
           margin-right: 0;
         }
         .nav-link {
+          padding: 0;
           line-height: 1.81;
           color: #ffffff;
         }

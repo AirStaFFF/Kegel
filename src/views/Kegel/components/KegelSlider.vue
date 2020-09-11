@@ -4,23 +4,29 @@
       :font-size="48"
       :text="'Scientific Facts for Kegel Exercises'"/>
     <div class="custom-carousel">
-      <hooper>
+      <hooper
+        :autoPlay="true"
+        :mouseDrag="false"
+        :touchDrag="false"
+        :infiniteScroll="true"
+        :shortDrag="false"
+        :playSpeed="5000">
         <slide
           v-for="(slide) in sliders"
           :key="slide.id">
           <div class="slide-text">{{ slide.text }}</div>
-          <div class="slide-link-block">
+          <a :href="slide.info.discription"
+             target="_blank"
+             class="slide-link-block">
             <img :src="slide.info.img" alt="" class="link-block_img">
             <div class="link-block_link">
               <span class="ellipse"><span class="text">{{ slide.info.title }}</span></span>
-              <a
-                :href="slide.info.discription"
-                target="_blank"
+              <div
                 class="ellipse">
                 <span class="link">{{ slide.info.discription }}</span>
-              </a>
+              </div>
             </div>
-          </div>
+          </a>
         </slide>
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
         <hooper-pagination slot="hooper-addons"></hooper-pagination>
@@ -54,21 +60,34 @@
       }
     },
     computed: {
-      ...mapState('kegel', ['sliders'])
-    }
+      ...mapState('kegel', ['sliders']),
+      getDevice() {
+        return document.documentElement.clientWidth > 1024 ? false : true
+      }
+    },
   }
 </script>
 
 <style lang="scss">
   .slider_block {
     margin-top: 133px;
-    padding-left: 456px;
-    padding-right: 456px;
+    padding-left: 486px;
+    padding-right: 486px;
     .red-border_block {
       justify-content: center;
     }
     .custom-carousel {
       margin-top: 64px;
+      position: relative;
+      &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 111;
+      }
       section, button {
         outline: none !important;
       }
@@ -81,6 +100,7 @@
         margin-left: auto;
         margin-right: auto;
         overflow: visible;
+        position: relative;
         .hooper-slide {
           padding: 48px 100px 45px;
           max-width: 807px;
@@ -183,8 +203,8 @@
   @media screen and (max-width: 1440px){
     .slider_block {
       margin-top: 133px;
-      padding-left: 128px;
-      padding-right: 128px;
+      padding-left: 148px;
+      padding-right: 148px;
     }
   }
   @media screen and (max-width: 1250px){
@@ -198,6 +218,9 @@
       padding-left: 64px;
       padding-right: 64px;
       .custom-carousel {
+        &:before {
+          display: none;
+        }
         .hooper {
           .hooper-slide {
             padding: 48px 62px 45px;

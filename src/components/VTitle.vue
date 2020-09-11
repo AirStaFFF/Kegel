@@ -17,6 +17,7 @@
   .custom-title {
     font-weight: bold;
     line-height: 1.14;
+    color: #333e51;
   }
   @media screen and (max-width: 1024px){
     .custom-title {

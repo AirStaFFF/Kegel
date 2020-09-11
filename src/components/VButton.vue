@@ -30,9 +30,16 @@
     justify-content: center;
     color: #ffffff;
     font-size: 16px;
+    transition: .5s;
   }
   a.custom-btn:link, a.custom-btn:active, a.custom-btn:visited{
     color: #fff;
     text-decoration: none;
+  }
+  a.custom-btn:hover {
+    background-color: #ff4c49;
+  }
+  a.custom-btn:active {
+    background-color: #d81e1b;
   }
 </style>

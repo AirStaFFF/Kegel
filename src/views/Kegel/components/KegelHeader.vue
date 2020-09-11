@@ -106,7 +106,7 @@
       display: flex;
       justify-content: flex-end;
       &-img {
-        max-width: 725px;
+        max-width: 625px;
         width: 100%;
       }
     }
