@@ -76,7 +76,11 @@
 </script>
 
 <style lang="scss">
+  .align-items-center {
+    align-items: center !important;
+  }
   .kegel-header {
+    position: relative;
     display: flex;
     padding-top: 112px;
     padding-left: 321px;

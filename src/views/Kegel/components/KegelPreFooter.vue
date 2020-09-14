@@ -68,6 +68,7 @@
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    background-size: cover;
     background-position: bottom;
     max-height: 790px;
     margin-top: 230px;

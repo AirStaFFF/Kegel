@@ -34,6 +34,9 @@
 </script>
 
 <style lang="scss">
+  .d-flex {
+    display: flex !important;
+  }
   .prover-benefits {
     margin-top: 160px;
     padding-left: 368px;
@@ -196,7 +199,7 @@
           margin-right: 0 !important;
           margin-top: 55px;
           .item-text {
-            font-size: 16px;
+            font-size: 1px;
             max-width: unset;
             position: relative;
             left: unset;

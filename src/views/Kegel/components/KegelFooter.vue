@@ -24,7 +24,17 @@
               v-for="(link, id2) in navigation.links"
               :key="id2">
               <a
+                v-if="navigation.title === 'Navigation'"
                 v-scroll-to="link.link"
+                class="link-block-link">{{link.text}}</a>
+              <a
+                v-else-if="navigation.title === 'Legal'"
+                :href="link.link"
+                target="_blank"
+                class="link-block-link">{{link.text}}</a>
+              <a
+                v-else-if="navigation.title === 'Contact'"
+                :href="link.link"
                 class="link-block-link">{{link.text}}</a>
             </div>
           </div>

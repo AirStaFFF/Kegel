@@ -1,41 +1,43 @@
 <template>
-  <div
-    class="new-kegel-navbar"
-    v-click-outside="outSideClick"
-    id="navigate"
-    :class="visible === true ? 'showNav' :
+ <div>
+   <div
+     class="new-kegel-navbar"
+     v-click-outside="outSideClick"
+     id="navigate"
+     :class="visible === true ? 'showNav' :
             visible === false ? 'hideNav' :
             'hideItems'">
-    <div
-      class="burger-img"
-      @click="changeVisible(true)"
-      v-if="!visible">
-      <img src="@/assets/images/burger.png" alt="">
-    </div>
-    <div
-      class="cross-img"
-      @click="changeVisible(false)"
-      v-else-if="visible === true">
-      <img src="@/assets/images/close-burger.png">
-    </div>
-    <div class="nav-logo">
-      <img
-        src="@/assets/images/header-logo.png"
-        class="nav-logo_img">
-    </div>
-    <div class="nav-items">
-      <div
-        v-for="(navItem, id) in navbar"
-        :key="id"
-        class="nav-item">
-        <a
-          v-scroll-to="navItem.link"
-          class="nav-link">
-          {{ navItem.text }}
-        </a>
-      </div>
-    </div>
-  </div>
+     <div
+       class="burger-img"
+       @click="changeVisible(true)"
+       v-if="!visible">
+       <img src="@/assets/images/burger.png" alt="">
+     </div>
+     <div
+       class="cross-img"
+       @click="changeVisible(false)"
+       v-else-if="visible === true">
+       <img src="@/assets/images/close-burger.png">
+     </div>
+     <div class="nav-logo">
+       <img
+         src="@/assets/images/header-logo.png"
+         class="nav-logo_img">
+     </div>
+     <div class="nav-items">
+       <div
+         v-for="(navItem, id) in navbar"
+         :key="id"
+         class="nav-item">
+         <a
+           v-scroll-to="navItem.link"
+           class="nav-link">
+           {{ navItem.text }}
+         </a>
+       </div>
+     </div>
+   </div>
+ </div>
 </template>
 
 <script>
@@ -184,6 +186,7 @@
         .nav-item {
           margin-right: 0;
           opacity: 0;
+          margin-top: 16px;
 
         }
       }
@@ -234,6 +237,11 @@
   @media screen and (max-width: 1650px) {
     .new-kegel-navbar {
       padding: 32px 191px 0;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    .new-kegel-navbar {
+      padding: 32px 64px 0;
     }
   }
   @media screen and (max-width: 1024px) {

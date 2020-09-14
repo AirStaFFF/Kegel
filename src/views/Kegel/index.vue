@@ -50,6 +50,9 @@
     margin-left: auto !important;
     margin-right: auto !important;
   }
+  .justify-content-center {
+    justify-content: center !important;
+  }
   @media screen and (max-width: 568px){
     body {
       .d-flex.red-border_block {

@@ -303,7 +303,7 @@ export default {
       links: [
         {
           text: 'Privacy Policy',
-          link: ''
+          link: 'http://appercut.co/privacy-policy.html'
         },
         {
           text: 'Terms of Service',
@@ -316,7 +316,7 @@ export default {
       links: [
         {
           text: 'support@appercut.eu',
-          link: ''
+          link: 'mailto:support@appercut.eu'
         },
       ]
     }

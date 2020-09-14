@@ -4,16 +4,27 @@
       :font-size="48"
       :text="'Scientific Facts for Kegel Exercises'"/>
     <div class="custom-carousel">
-      <hooper
-        :autoPlay="true"
-        :mouseDrag="false"
-        :touchDrag="false"
-        :infiniteScroll="true"
-        :shortDrag="false"
-        :playSpeed="5000">
-        <slide
+      <vue-slick-carousel
+        class="slider-swipe hooper"
+        :autoplay="true"
+        :autoplaySpeed="5000"
+        :arrows="true"
+        :adaptiveHeight="true"
+        :dots="true">
+        <template #prevArrow="arrowOption">
+          <div class="custom-prew-arrow">
+            <prev-arrow :color="'#333E51'"/>
+          </div>
+        </template>
+        <template #nextArrow="arrowOption">
+          <div class="custom-next-arrow">
+            <next-arrow :color="'#333E51'"/>
+          </div>
+        </template>
+        <div
           v-for="(slide) in sliders"
-          :key="slide.id">
+          :key="slide.id"
+          class="hooper-slide">
           <div class="slide-text">{{ slide.text }}</div>
           <a :href="slide.info.discription"
              target="_blank"
@@ -27,32 +38,27 @@
               </div>
             </div>
           </a>
-        </slide>
-        <hooper-navigation slot="hooper-addons"></hooper-navigation>
-        <hooper-pagination slot="hooper-addons"></hooper-pagination>
-      </hooper>
+        </div>
+      </vue-slick-carousel>
     </div>
   </div>
 </template>
 
 <script>
+  import VueSlickCarousel from 'vue-slick-carousel'
+  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   import VBorderTitle from '@/components/VBorderTitle';
-  import {
-    Pagination as HooperPagination,
-    Navigation as HooperNavigation,
-    Hooper,
-    Slide
-  } from 'hooper';
-  import 'hooper/dist/hooper.css';
+  import PrevArrow from '@/components/icons/PrevArrow';
+  import NextArrow from '@/components/icons/NextArrow';
   import { mapState } from 'vuex';
   export default {
     name: "KegelSlider",
     components: {
       VBorderTitle,
-      Hooper,
-      Slide,
-      HooperPagination,
-      HooperNavigation
+      VueSlickCarousel,
+      NextArrow,
+      PrevArrow
     },
     data() {
       return {
@@ -69,6 +75,87 @@
 </script>
 
 <style lang="scss">
+  .custom-prew-arrow {
+    font-size: 25px;
+    color: #000;
+    &:before {
+      display: none;
+    }
+  }
+  .custom-next-arrow {
+    font-size: 25px;
+    color: #000;
+    &:before {
+      display: none;
+    }
+  }
+  .hooper {
+    height: 100%;
+    .slick-prev, .slick-next {
+      width: 57px;
+      height: 57px;
+      box-shadow: 0 20px 50px 0 rgba(96, 106, 140, 0.11);
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slick-prev {
+      left: -128px;
+    }
+    .slick-next {
+      right: -128px;
+    }
+    .slick-prev:before, .slick-next:before {
+      font-size: 57px;
+    }
+    .slick-dots {
+      bottom: -75px;
+      li {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #cacbce;
+        margin: 0 8px;
+        &.slick-active {
+          background-color: #fa2724;
+        }
+        button:before {
+          font-size: 0;
+        }
+      }
+    }
+    .slick-list {
+      height: inherit;
+      min-height: inherit;
+      .slick-track {
+        height: inherit;
+        min-height: inherit;
+        .slick-slide {
+          height: inherit;
+          min-height: inherit;
+          & > div {
+            height: inherit;
+            min-height: inherit;
+          }
+          .hooper-slide {
+            height: inherit;
+            min-height: inherit;
+            display: flex !important;
+          }
+        }
+      }
+    }
+  }
+  .slide-link-block {
+    text-decoration: none;
+    position: relative;
+    z-index:11111111;
+    &:hover {
+      text-decoration: none;
+    }
+  }
   .slider_block {
     margin-top: 133px;
     padding-left: 486px;
@@ -79,15 +166,15 @@
     .custom-carousel {
       margin-top: 64px;
       position: relative;
-      &:before {
-        content: '';
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 111;
-      }
+      /*&:after {*/
+      /*  content: '';*/
+      /*  height: 100%;*/
+      /*  width: 100%;*/
+      /*  position: absolute;*/
+      /*  top: 0;*/
+      /*  left: 0;*/
+      /*  z-index: 111;*/
+      /*}*/
       section, button {
         outline: none !important;
       }
@@ -101,6 +188,7 @@
         margin-right: auto;
         overflow: visible;
         position: relative;
+        touch-action: pan-x !important;
         .hooper-slide {
           padding: 48px 100px 45px;
           max-width: 807px;
@@ -108,6 +196,7 @@
           display: flex;
           flex-wrap: wrap;
           align-content: space-between;
+          touch-action: pan-x !important;
            .slide-text {
              width: 100%;
              line-height: 1.86;
@@ -225,10 +314,10 @@
           .hooper-slide {
             padding: 48px 62px 45px;
           }
-          .hooper-prev {
+          .slick-prev {
             display: none !important;
           }
-          .hooper-next {
+          .slick-next {
             display: none !important;
           }
         }
@@ -265,8 +354,8 @@
           .hooper-next {
             display: none !important;
           }
-          .hooper-pagination {
-            .hooper-indicator {
+          .slick-dots {
+            li {
               margin: 0 4px;
               height: 8px;
               width: 8px;

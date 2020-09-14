@@ -25,6 +25,9 @@
 </script>
 
 <style lang="scss">
+  .w-100 {
+    width: 100% !important;
+  }
   .what-is_block {
     padding-left: 321px;
     padding-right: 321px;
