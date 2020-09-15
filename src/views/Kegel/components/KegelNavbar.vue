@@ -91,6 +91,7 @@
       align-items: center;
       .nav-item {
         margin-right: 48px;
+        cursor: pointer;
         &:last-child {
           margin-right: 0;
         }
@@ -98,7 +99,12 @@
           padding: 0;
           line-height: 1.81;
           color: #ffffff;
+          transition: .5s;
+          &:hover {
+            color: #fa2724;
+          }
         }
+
       }
     }
   }

@@ -91,6 +91,9 @@
     }
   }
   @media screen and (max-width: 700px){
+    .block-3.application-features-item {
+      margin-top: 52px !important;
+    }
     .application-features-title_block {
       margin-top: 34px;
       .max-width-800 {

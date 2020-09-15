@@ -12,13 +12,17 @@
         :adaptiveHeight="true"
         :dots="true">
         <template #prevArrow="arrowOption">
-          <div class="custom-prew-arrow">
-            <prev-arrow :color="'#333E51'"/>
+          <div
+            :style="[{color: left ? '#fa2724' : '#333E51'}]"
+            class="custom-prew-arrow">
+            <prev-arrow />
           </div>
         </template>
         <template #nextArrow="arrowOption">
-          <div class="custom-next-arrow">
-            <next-arrow :color="'#333E51'"/>
+          <div
+            :style="[{color: right ? '#fa2724' : '#333E51'}]"
+            class="custom-next-arrow">
+            <next-arrow/>
           </div>
         </template>
         <div
@@ -26,7 +30,7 @@
           :key="slide.id"
           class="hooper-slide">
           <div class="slide-text">{{ slide.text }}</div>
-          <a :href="slide.info.discription"
+          <a :href="slide.info.link"
              target="_blank"
              class="slide-link-block">
             <img :src="slide.info.img" alt="" class="link-block_img">
@@ -58,12 +62,17 @@
       VBorderTitle,
       VueSlickCarousel,
       NextArrow,
-      PrevArrow
+      PrevArrow,
     },
     data() {
       return {
-        slide: 0
+        slide: 0,
+        left: false,
+        right: false,
+        prevSlide: 0
       }
+    },
+    methods: {
     },
     computed: {
       ...mapState('kegel', ['sliders']),
@@ -91,6 +100,7 @@
   }
   .hooper {
     height: 100%;
+    outline: none;
     .slick-prev, .slick-next {
       width: 57px;
       height: 57px;
@@ -188,7 +198,6 @@
         margin-right: auto;
         overflow: visible;
         position: relative;
-        touch-action: pan-x !important;
         .hooper-slide {
           padding: 48px 100px 45px;
           max-width: 807px;
@@ -196,7 +205,6 @@
           display: flex;
           flex-wrap: wrap;
           align-content: space-between;
-          touch-action: pan-x !important;
            .slide-text {
              width: 100%;
              line-height: 1.86;

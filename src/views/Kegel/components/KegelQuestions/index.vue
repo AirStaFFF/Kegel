@@ -47,6 +47,7 @@
       margin-right: auto;
       margin-top: 118px;
       display: flex;
+      justify-content: center;
       .question-block {
         width: 45%;
         &:first-child {
@@ -57,6 +58,7 @@
   }
   @media screen and (max-width: 1140px){
     .kegel-questions {
+      margin-top: 64px;
       padding-right: 48px;
       padding-left: 48px;
       .justify-content-center.red-border_block {

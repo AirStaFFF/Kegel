@@ -199,7 +199,7 @@
           margin-right: 0 !important;
           margin-top: 55px;
           .item-text {
-            font-size: 1px;
+            font-size: 16px;
             max-width: unset;
             position: relative;
             left: unset;

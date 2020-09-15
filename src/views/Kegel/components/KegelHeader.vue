@@ -88,7 +88,7 @@
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position-y: -45px;
+    background-position-y: 0px;
     .header-left_block {
       div {
         margin-top: -100px;

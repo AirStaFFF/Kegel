@@ -105,9 +105,14 @@
         }
         .link-block-item {
           padding: 4px 4px 4px 0px;
+          cursor: pointer;
           .link-block-link {
             text-decoration: none;
             color: #5a6175;
+            transition: .5s;
+            &:hover {
+              color: #fa2724;
+            }
           }
         }
       }

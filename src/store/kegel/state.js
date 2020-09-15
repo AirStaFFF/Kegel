@@ -46,6 +46,7 @@ export default {
       info: {
         title: 'National Center for Biotechnology Information',
         discription: 'https://www.ncbi.nlm.nih.gov/',
+        link: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4003840/',
         img: require('@/assets/images/png1.png')
       }
     },
@@ -55,6 +56,7 @@ export default {
       info: {
         title: 'Wiley Online Library - BJU International',
         discription: 'https://bjui-journals.onlinelibrary.wiley.com/',
+        link: 'https://bjui-journals.onlinelibrary.wiley.com/doi/full/10.1111/j.1464-410X.2005.05690.x',
         img: require('@/assets/images/png2.png')
       }
     },
@@ -64,6 +66,7 @@ export default {
       info: {
         title: 'Oxford Academic Journals',
         discription: 'https://academic.oup.com/',
+        link: 'https://academic.oup.com/ptj/article/83/6/536/2805269',
         img: require('@/assets/images/png3.png')
       }
     },
@@ -73,6 +76,7 @@ export default {
       info: {
         title: 'Pelvic Floor Muscle Training in Males: Practical Applications',
         discription: 'https://cdn.shopify.com/',
+        link: 'https://cdn.shopify.com/s/files/1/0077/8282/6074/files/Pelvic_Floor_Muscle_Training_in_Males-_Practical_Applications.pdf?3156',
         img: require('@/assets/images/png4.png')
       }
     },
@@ -82,6 +86,7 @@ export default {
       info: {
         title: 'Taylor & Francis Online',
         discription: 'https://www.tandfonline.com/',
+        link: 'https://www.tandfonline.com/doi/abs/10.1080/00926239608405302',
         img: require('@/assets/images/png5.png')
       }
     },
@@ -91,6 +96,7 @@ export default {
       info: {
         title: 'Wiley Online Library',
         discription: 'https://onlinelibrary.wiley.com/',
+        link: 'https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2605.2011.01243.x',
         img: require('@/assets/images/png6.png')
       }
     },
@@ -100,6 +106,7 @@ export default {
       info: {
         title: 'ScienceDirect.com',
         discription: 'https://www.sciencedirect.com/',
+        link: 'https://www.sciencedirect.com/science/article/pii/S0090429502023907',
         img: require('@/assets/images/png7.png')
       }
     },
@@ -109,6 +116,7 @@ export default {
       info: {
         title: 'ScienceDirect.com',
         discription: 'https://www.sciencedirect.com/',
+        link: 'https://www.sciencedirect.com/science/article/abs/pii/S014067369903473X',
         img: require('@/assets/images/png7.png')
       }
     },
@@ -118,6 +126,7 @@ export default {
       info: {
         title: 'The Journal of Sexual Medicine',
         discription: 'https://www.smr.jsexmed.org/',
+        link: 'https://www.smr.jsexmed.org/article/S2050-0521(15)00002-5/pdf',
         img: require('@/assets/images/png8.png')
       }
     },
@@ -127,6 +136,7 @@ export default {
       info: {
         title: 'ScienceDirect.com',
         discription: 'https://www.sciencedirect.com/',
+        link: 'https://www.sciencedirect.com/science/article/abs/pii/S0090429514002738',
         img: require('@/assets/images/png7.png')
       }
     },
@@ -136,6 +146,7 @@ export default {
       info: {
         title: 'ScienceDirect.com',
         discription: 'https://www.sciencedirect.com/',
+        link: 'https://www.sciencedirect.com/science/article/abs/pii/S0022534705634520',
         img: require('@/assets/images/png7.png')
       }
     },
